@@ -1,2 +1,3 @@
 # g
-Assist with Git operations
+
+A tool to assist with Git operations.
