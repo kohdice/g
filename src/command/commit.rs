@@ -1,17 +1,22 @@
 use anyhow::Result;
 use clap::Args;
 
-use crate::command::root::Command;
-
-pub const ABOUT_COMMIT: &str = "Commit Command";
-pub const LONG_ABOUT_COMMIT: &str = "Commit Command Long Description";
+const ABOUT_COMMIT: &str = "Commit Command";
+const LONG_ABOUT_COMMIT: &str = "Commit Command Long Description";
 
 #[derive(Debug, Args)]
-pub struct CommitCommand;
+#[command(about = ABOUT_COMMIT, long_about = LONG_ABOUT_COMMIT)]
+pub struct CommitArgs {
+    #[arg(short, long)]
+    message: Option<String>,
+}
 
-impl Command for CommitCommand {
-    fn run(&self) -> Result<()> {
-        println!("The commit command has been executed");
+impl CommitArgs {
+    pub fn run(&self) -> Result<()> {
+        match &self.message {
+            Some(message) => println!("The commit message is: {}", message),
+            None => println!("No message"),
+        }
         Ok(())
     }
 }

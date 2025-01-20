@@ -1,25 +1,17 @@
 use anyhow::Result;
 use clap::Subcommand;
 
-use crate::command::commit::{CommitCommand, ABOUT_COMMIT, LONG_ABOUT_COMMIT};
-
-pub trait Command {
-    fn run(&self) -> Result<()>;
-}
+use crate::command::commit::CommitArgs;
 
 #[derive(Debug, Subcommand)]
 pub enum Commands {
-    #[command(
-        about = ABOUT_COMMIT,
-        long_about = LONG_ABOUT_COMMIT,
-    )]
-    Commit,
+    Commit(CommitArgs),
 }
 
 impl Commands {
     pub fn run(&self) -> Result<()> {
         match self {
-            Commands::Commit => CommitCommand.run(),
+            Commands::Commit(args) => args.run(),
         }
     }
 }
