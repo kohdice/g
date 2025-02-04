@@ -1,9 +1,9 @@
 use anyhow::Result;
 use clap::Parser;
 
-use crate::command::root::Commands;
+use crate::command::Commands;
 
-const LONG_ABOUT: &str = r#"A tool to assist with Git operations.
+const LONG_ABOUT: &str = r#"A tool to assist with Git operations
 
 This application provides commands to simplify and enhance
 Git workflows, making it easier to work with repositories."#;

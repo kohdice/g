@@ -1,9 +1,11 @@
+mod commit;
+
 use anyhow::Result;
 use clap::Subcommand;
 
 use crate::command::commit::CommitArgs;
 
-#[derive(Debug, Subcommand)]
+#[derive(Subcommand, Debug)]
 pub enum Commands {
     Commit(CommitArgs),
 }

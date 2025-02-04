@@ -4,9 +4,9 @@ use clap::Args;
 const ABOUT_COMMIT: &str = "Commit Command";
 const LONG_ABOUT_COMMIT: &str = "Commit Command Long Description";
 
-#[derive(Debug, Args)]
+#[derive(Args, Debug)]
 #[command(about = ABOUT_COMMIT, long_about = LONG_ABOUT_COMMIT)]
-pub struct CommitArgs {
+pub(crate) struct CommitArgs {
     #[arg(short, long)]
     message: Option<String>,
 }
