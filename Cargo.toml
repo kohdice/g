@@ -3,11 +3,11 @@ name = "g"
 version = "0.0.1"
 edition = "2021"
 authors = ["kohdice"]
-description = "A tool to assist with Git operations."
+description = "A tool to assist with Git operations"
 repository = "https://github.com/kohdice/g"
 license = "MIT"
 
 [dependencies]
 anyhow = "1.0.95"
-clap = { version = "4.5.26", features = ["derive"] }
+clap = { version = "4.5.28", features = ["derive"] }
 git2 = "0.20"
